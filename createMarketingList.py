@@ -48,12 +48,12 @@ for row in csvfile:
     
 
 
-    # add the key-value pair to the dictionary
+    # add the key-value pair to the dictionary ^^
 
 
 
 # print the dictionary after the loop is finished
-
+print(vals)
 
 
 # iternate through the dictionary and write to the output file
