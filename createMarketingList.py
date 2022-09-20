@@ -25,23 +25,27 @@ import csv
 
 # open the vendorlist file
 
+infile = open('VendorList.csv', 'r')
+
 
 # create a csv object from the file object
+
+csvfile = csv.reader(infile, delimiter=',')
 
 
 # create an output file
 
-
-
-
+outfile = open('marketinglistFINAL.csv', 'w', newline="")
 
 # create an empty dictionary
 
-
+vals = {}
 
 # iterate through the csv object
 
-
+for row in csvfile:
+    vals[str(row[1] + ' ' + row[2])] = {'email' : row[4], 'phone' : row[5]}
+    
 
 
     # add the key-value pair to the dictionary
@@ -53,8 +57,13 @@ import csv
 
 
 # iternate through the dictionary and write to the output file
+writer = csv.writer(outfile)
+writer.writerow(['Name', 'Email', 'Phone'])
+
+for record in vals:
+    writer.writerow([record, vals[record]['email'], vals[record]['phone']])
 
 
 
 # close your output file
-
+outfile.close()
