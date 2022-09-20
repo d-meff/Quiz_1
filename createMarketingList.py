@@ -26,6 +26,7 @@ import csv
 # open the vendorlist file
 
 infile = open('VendorList.csv', 'r')
+next(infile)
 
 
 # create a csv object from the file object
